@@ -86,7 +86,7 @@ class DataGenerator(keras.utils.Sequence):
     def __init__(self, list_IDs, batch_size, data, max_len, num_chars, use_multiprocessing=True, workers=6, shuffle=True):
         super().__init__(use_multiprocessing=use_multiprocessing, workers=workers)
         'Initialization'
-        encoder = onehotencoder(max_chars=max_len)
+        self.encoder = onehotencoder(max_chars=max_len)
         self.batch_size = batch_size
         self.list_IDs = list_IDs
         self.data = data
